@@ -1,0 +1,32 @@
+# 一時ファイル
+*.tmp
+*.temp
+*.swp
+
+# ログファイル
+*.log
+
+# 環境設定
+.env
+.env.*
+
+# 個人設定ファイル
+.vscode/
+.idea/
+
+# ビルド成果物
+dist/
+build/
+node_modules/
+
+# バックアップファイル
+*.bak
+*~
+
+# キャッシュディレクトリ
+.cache/
+
+/node_modules
+/build
+/temp
+.DS_Store
