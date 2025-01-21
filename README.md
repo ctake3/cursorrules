@@ -5,11 +5,40 @@ Cursor Composerを使用した効率的な開発のためのプロジェクト�
 ## 初期セットアップ
 
 ### 1. プロジェクトの初期化
+
+#### 前提条件
+- Git
+- bash/zsh
+- Cursor IDE
+
+#### 基本セットアップ
 ```bash
 # リポジトリのクローン
 git clone [repository_url]
 cd [project_name]
+```
 
+#### 必須ファイルのメンテナンス
+以下のファイルを順番に確認・更新してください：
+
+1. `.cursorrules`
+   - プロジェクト名の設定
+   - 必要なモードの有効化
+   - プロンプトテンプレートのカスタマイズ
+
+2. `.notes/00_project/`
+   - `overview.md`: プロジェクトの目的と要件を定義
+   - `structure.md`: プロジェクト構造を定義
+
+3. `.notes/10_tasks/`
+   - `templates/order.md`: タスク指示書のテンプレートを調整
+   - `list.md`: 初期タスクリストを作成
+
+4. `.notes/20_meetings/`
+   - `notes.md`: 初期のプロジェクト設定会議の記録
+
+#### スクリプトのセットアップ
+```bash
 # 必要なディレクトリとファイルの作成
 bash .notes/scripts/update_structure.sh
 
@@ -93,6 +122,47 @@ chmod +x .notes/scripts/create_task.sh
   - テストカバレッジ
 ```
 
+## 開発ワークフロー
+
+### フェーズ別アプローチ
+
+#### 1. 計画フェーズ
+- プロジェクト要件の確認（overview.md）
+- タスク依存関係の確認（list.md）
+- コード配置の確認（structure.md）
+
+#### 2. 実装フェーズ
+- タスク文書化（order.md）
+- 決定事項の参照（notes.md）
+- 変更の記録（list.md）
+
+#### 3. レビューフェーズ
+- 要件整合性の確認
+- 規約との整合性確認
+- 変更内容の記録
+
+### ドキュメント更新ルール
+
+#### 優先度高（即時更新必須）
+- タスクステータス変更時：list.md
+- 決定事項発生時：notes.md
+
+#### 優先度中（定期的な更新）
+- 要件/仕様変更時：overview.md
+- 構造変更時：structure.md
+
+### 動作モード
+
+#### Base Mode
+- 定例タスクの実行
+- 標準的な開発フロー
+- 通常の優先度での処理
+
+#### Enhanced Mode
+- 複雑な問題への対応
+- 高度な分析と判断が必要なタスク
+- 優先度の高い処理
+
 ## プロジェクト管理
 
 ### ドキュメント構成
@@ -110,6 +180,18 @@ chmod +x .notes/scripts/create_task.sh
 .notes/scripts/create_task.sh "タスク名"
 ```
 
+## セキュリティとコンプライアンス
+
+### セキュリティ要件
+1. ドキュメントと実装の一貫性維持
+   - 変更履歴の明確な記録
+   - コード変更とドキュメント更新の同期
+
+2. セキュリティ考慮事項
+   - 機密情報の適切な管理
+   - アクセス権限の適切な設定
+   - セキュリティレビューの実施
+
 ## 注意事項
 - 各プロンプトは目的に応じてカスタマイズしてください
 - プロジェクトの進行に合わせて適宜ドキュメントを更新してください
@@ -119,4 +201,4 @@ chmod +x .notes/scripts/create_task.sh
 ## 参考
 - 詳細な使用方法: `.notes/README.md`
 - プロジェクト概要: `.notes/00_project/overview.md`
-- タスク管理: `.notes/10_tasks/list.md` # cursorrules
+- タスク管理: `.notes/10_tasks/list.md`
